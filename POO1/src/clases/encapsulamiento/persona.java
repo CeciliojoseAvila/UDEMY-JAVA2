@@ -12,19 +12,18 @@ public class persona {
         this.nombre = nombre;
         this.edad = edad;
         this.eliminado = eliminado;
+        
     }
     //ahora los getter y setter (insertar code)
-
     public String getNombre() {
-        return nombre;
+        return this.nombre;
     }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
     public int getEdad() {
-        return edad;
+        return this.edad;
     }
 
     public void setEdad(int edad) {
@@ -41,10 +40,16 @@ public class persona {
     //ahora en el package del source principal creamos un nuevo paquete para el testear el encapsulado
 
     //aqui hago toString  
-    @Override
+   
     public String toString() {
         return " persona: [Nombre: %s, Edad: %d, Eliminado %b]"
                 .formatted(this.nombre, this.edad, this.eliminado); // del return elimino super.toString(),Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    }
+
+    public String obtenerDetalle() {
+          
+        return "Nombre: ";
+          
     }
     
 }

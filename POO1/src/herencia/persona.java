@@ -1,6 +1,8 @@
 
 package herencia;
 
+import java.util.Objects;
+
 public class persona {
     protected String nombre;
     protected char genero;
@@ -64,8 +66,49 @@ public class persona {
         sb.append('}');
         return sb.toString();
     }
+
+    public String obtenerDetalle() {
+       return "Nombre: %s Edad: %d".formatted(this.nombre, this.edad);
+    }
+    
+    //insert code: equals and hashcode y seleccionar todo de ambos lados
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 79 * hash + Objects.hashCode(this.nombre);
+        hash = 79 * hash + this.genero;
+        hash = 79 * hash + this.edad;
+        hash = 79 * hash + Objects.hashCode(this.direccion);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final persona other = (persona) obj;
+        if (this.genero != other.genero) {
+            return false;
+        }
+        if (this.edad != other.edad) {
+            return false;
+        }
+        if (!Objects.equals(this.nombre, other.nombre)) {
+            return false;
+        }
+       if ( !Objects.equals(this.direccion, other.direccion)){
+           return false;
+       }
+        return true;
+    }
    
-    
-    
-    
+   
 }
