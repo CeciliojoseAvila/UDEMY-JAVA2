@@ -1,5 +1,6 @@
 
-package PELICULAS.Modelo;
+package pelicula2.Modelo;
+
 //primero generé el paquete "PELICULAS" Y dentro la clase Main
 //despues hice nuevo Paquete PELICULAS.Modelo" y dentro la clase Peliculas
 
